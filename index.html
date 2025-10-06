@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SBA Membership Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .form-container {
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    h2, h3 {
+      text-align: center;
+      color: #004aad;
+      margin-top: 0;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin: 15px 0 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    input[type="submit"] {
+      background-color: #004aad;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #003080;
+    }
+
+    p {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+	
+	.upload-container {
+    text-align: center;
+  }
+
+  .upload-box {
+    border: 2px dashed #ccc;
+    border-radius: 15px;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .upload-box:hover {
+    border-color: #007bff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  }
+
+  .upload-box img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 15px;
+  }
+
+  .upload-text {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+  }
+
+  .camera-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #007bff;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+	
+	
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Supportive Boys/Girls Association</h2>
+    <h3>Membership Form</h3>
+
+   <div class="upload-container">
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <label class="upload-box" for="profilePic" id="uploadBox">
+      <div class="upload-text" id="uploadText">
+        <div class="camera-icon">📷</div>
+        Click or drag an image here
+      </div>
+    </label>
+    <input type="file" id="profilePic" name="profilePic" accept="image/*" onchange="previewImage(event)">
+   
+  </form>
+</div>
+
+
+   <!-- Replace "your_form_id" with your actual Formspree ID -->
+    <form action="https://formspree.io/f/xldpjvbz" method="POST">
+      
+	  
+	  
+      <label>Full Name:</label>
+      <input type="text" name="full_name" required>
+
+      <label>Date of Birth:</label>
+      <input type="date" name="dob" required>
+
+      <label>Gender:</label>
+      <input type="radio" name="gender" value="male"> Male
+      <input type="radio" name="gender" value="female"> Female
+
+      <label>Place of Birth (City/Town):</label>
+      <input type="text" name="birth_place">
+
+      <label>Nationality:</label>
+      <input type="text" name="nationality">
+
+      <label>Phone Number:</label>
+      <input type="tel" name="phone">
+	  
+	   <label>Email:</label>
+      <input type="text" name="Email" required>
+
+      <h3>Emergency Contact Information</h3>
+      <label>Full Name:</label>
+      <input type="text" name="emergency_name">
+
+      <label>Relationship to Applicant:</label>
+      <input type="text" name="relationship">
+
+      <label>Phone Number:</label>
+      <input type="tel" name="emergency_phone">
+	  
+	       <label>Select your age:</label>
+	  <input type="radio" name="age" value="0-18"> 0-18
+	   <input type="radio" name="age" value="19-25"> 19-25
+	  
+	        <label>Relationship Status:</label>
+      <input type="radio" name="Single" value="Single"> Single
+      <input type="radio" name="Married" value="Married"> Married
+      <input type="radio" name=" In a relationship" value=" In a relationship"> In a relationship
+	        
+	  
+	
+	  <br><br>
+	  <h3>Agreement and Consent</h3>
+      
+      <label>Applicant Signature:</label>
+      <input type="text" name="applicant_signature">
+	  
+      <label>Parent/Guardian Signature (if under 18):</label>
+      <input type="text" name="guardian_signature">
+
+      <label for="Bio">What you like about this organization:</label>
+	  <textarea name"Bio" id="Bio" cols="45"></textarea>
+	  
+	   <label>Date of submission:</label>
+      <input type="date" name="applicant_date">
+	  
+	  <p>
+        I, <input type="text" name="consent_name">, affirm that the information provided 
+        in this form is accurate to the best of my knowledge. I understand that my membership 
+        supports the mission and activities of the Supportive Boys & Girls Association.
+      </p>
+
+     
+	  <p>Sign by: Aaron M. Tulay (President)</p>
+	  <p>Approved by: Franklin Davis, Jr. (CEO)</p>
+	    
+
+      <input type="submit" value="Submit Form">
+    </form>
+  </div>
+
+<script>
+function previewImage(event) {
+    const input = event.target;
+    const uploadBox = document.getElementById('uploadBox');
+    const uploadText = document.getElementById('uploadText');
+
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            uploadBox.innerHTML = <img src="${e.target.result}" alt="Preview">;
+        }
+        reader.readAsDataURL(input.files[0]);
+    } else {
+        uploadBox.innerHTML = uploadText.outerHTML;
+    }
+}
+
+// Drag & drop functionality
+const uploadBox = document.getElementById('uploadBox');
+
+uploadBox.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    uploadBox.style.borderColor = '#007bff';
+});
+
+uploadBox.addEventListener('dragleave', () => {
+    uploadBox.style.borderColor = '#ccc';
+});
+
+uploadBox.addEventListener('drop', (e) => {
+    e.preventDefault();
+    const files = e.dataTransfer.files;
+    if (files.length) {
+        document.getElementById('profilePic').files = files;
+        previewImage({ target: document.getElementById('profilePic') });
+    }
+});
+</script>
+  
+</body>
+</html>
